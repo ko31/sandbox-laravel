@@ -131,3 +131,17 @@ $ composer create-project --prefer-dist laravel/laravel myproject
 ```
 
 Visit http://homestead.test in your web browser.
+
+## PHP_CodeSniffer
+
+Sniffering.
+ 
+```
+$ composer sniffer
+```
+
+Fixing.
+ 
+```
+$ composer sniffer-fix
+```
