@@ -48,7 +48,7 @@ databases:
     - homestead
 
 features:
-    - mariadb: false
+    - mariadb: true
     - ohmyzsh: false
     - webdriver: false
 
