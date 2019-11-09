@@ -49,4 +49,11 @@ class HelloController extends Controller
 
         return view('hello.directive', $data);
     }
+
+	public function child()
+	{
+		$data = [];
+
+		return view('hello.child', $data);
+	}
 }
