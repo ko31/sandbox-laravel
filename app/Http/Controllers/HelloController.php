@@ -25,10 +25,28 @@ class HelloController extends Controller
 
     public function list()
     {
-    	$data = [
-    		'records' => Book::all(),
-	    ];
+        $data = [
+            'records' => Book::all(),
+        ];
 
-    	return view('hello.list', $data);
+        return view('hello.list', $data);
+    }
+
+    public function directive()
+    {
+        $data = [
+            'raw' => '<img src="http://placehold.jp/200x50.png" />',
+            'random' => random_int(1, 100),
+            'msg' => 'Hello World!',
+            'msg3' => '',
+            'records' => [
+                '1' => 'taro',
+                '2' => 'jiro',
+                '3' => 'saburo',
+            ],
+            'weeks' => [ 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'San' ],
+        ];
+
+        return view('hello.directive', $data);
     }
 }
