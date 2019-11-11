@@ -24,5 +24,6 @@ Route::prefix('hello')->group(function(){
 	Route::get('child', 'HelloController@child');
 });
 
+Route::redirect('book', 'book/list');
 Route::get('book/list', 'BookController@list');
 Route::get('book/view/{id}', 'BookController@view');
