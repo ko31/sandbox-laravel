@@ -15,11 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello', 'HelloController@index');
-Route::get('hello/view', 'HelloController@view');
-Route::get('hello/list', 'HelloController@list');
-Route::get('hello/directive', 'HelloController@directive');
-Route::get('hello/child', 'HelloController@child');
+// Route prefixs
+Route::prefix('hello')->group(function(){
+	Route::get('', 'HelloController@index');
+	Route::get('view', 'HelloController@view');
+	Route::get('list', 'HelloController@list');
+	Route::get('directive', 'HelloController@directive');
+	Route::get('child', 'HelloController@child');
+});
 
 Route::get('book/list', 'BookController@list');
 Route::get('book/view/{id}', 'BookController@view');
