@@ -26,6 +26,10 @@
                 <td>{{$record->published}}</td>
             </tr>
         @endforeach
+
+        <!-- Collections -->
+        @each('subviews.book',$records, 'record', 'subviews.book_empty')
+
         </tbody>
     </table>
 @endsection
