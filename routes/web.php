@@ -38,4 +38,5 @@ Route::prefix('ctl')->group(function () {
     Route::get('json', 'CtlController@json');
     Route::get('downloadcsv', 'CtlController@downloadCsv');
     Route::get('request', 'CtlController@request');
+	Route::match(['get','post'], 'form', 'CtlController@form');
 });

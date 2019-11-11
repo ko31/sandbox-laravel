@@ -57,6 +57,14 @@ class CtlController extends Controller
         return sprintf("<pre>%s</pre>", print_r($data, true));
     }
 
+	public function form( Request $req ) {
+		$name = $req->input('name', '');
+
+		return view( 'ctl.form', [
+			'result' => $name,
+		] );
+	}
+
     private function _getDummyDataArray()
     {
         return [
