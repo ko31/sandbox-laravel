@@ -29,6 +29,6 @@ class BookController extends Controller
             'records'=> Book::where('id', $id)->get(),
         ];
 
-	    return view('book.list', $data);
+        return view('book.list', $data);
     }
 }

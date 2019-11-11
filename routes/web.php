@@ -16,22 +16,25 @@ Route::get('/', function () {
 });
 
 // Route prefixs
-Route::prefix('hello')->group(function(){
-	Route::get('', 'HelloController@index');
-	Route::get('view', 'HelloController@view');
-	Route::get('list', 'HelloController@list');
-	Route::get('directive', 'HelloController@directive');
-	Route::get('child', 'HelloController@child');
+Route::prefix('hello')->group(function () {
+    Route::get('', 'HelloController@index');
+    Route::get('view', 'HelloController@view');
+    Route::get('list', 'HelloController@list');
+    Route::get('directive', 'HelloController@directive');
+    Route::get('child', 'HelloController@child');
 });
 
 Route::redirect('book', 'book/list');
 Route::get('book/list', 'BookController@list');
-Route::get('book/view/{id}', 'BookController@view');
+Route::get('book/view/{id}', 'BookController@view')
+	->name('bookview');
 
-Route::prefix('ctl')->group(function(){
-	Route::get('plain', 'CtlController@plain');
-	Route::get('html', 'CtlController@html');
-	Route::get('json', 'CtlController@json');
-	Route::get('downloadcsv', 'CtlController@downloadCsv');
-	Route::get('downloadfile', 'CtlController@downloadFile');
+Route::prefix('ctl')->group(function () {
+    Route::get('plain', 'CtlController@plain');
+    Route::get('html', 'CtlController@html');
+    Route::get('tohtml', 'CtlController@tohtml');
+    Route::get('togoogle', 'CtlController@togoogle');
+    Route::get('toviewbook', 'CtlController@toviewbook');
+    Route::get('json', 'CtlController@json');
+    Route::get('downloadcsv', 'CtlController@downloadCsv');
 });
