@@ -5,12 +5,16 @@
     <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 </head>
 <body>
-@section('sidebar')
-    <p>This is the master sidebar.</p>
-@show
+
+<header>
+    @section('header')
+        <hr>
+    @show
+</header>
 
 <div class="container">
     @yield('content')
 </div>
+
 </body>
 </html>

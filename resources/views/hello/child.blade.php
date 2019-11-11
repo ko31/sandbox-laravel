@@ -2,9 +2,9 @@
 
 @section('title', 'Page Title')
 
-@section('sidebar')
+@section('header')
+    <p>This is header.</p>
     @parent
-    <p>This is child sidebar.</p>
 @endsection
 
 @section('content')
@@ -26,5 +26,4 @@
         'alert_title'=>'Component by Sub-Views',
         'slot'=>'This is component contents.',
     ])
-
 @endsection

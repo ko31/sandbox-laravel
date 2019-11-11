@@ -1,33 +1,31 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello</title>
-    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-</head>
-<body>
+@extends('layouts.app')
 
-<table class="table">
-    <thead>
-    <tr>
-        <td>Title</td>
-        <td>Price</td>
-        <td>Publisher</td>
-        <td>Published</td>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach($records as $record)
+@section('title', 'Books List')
+
+@section('header')
+    <p>This is books list.</p>
+    @parent
+@endsection
+
+@section('content')
+    <table class="table">
+        <thead>
         <tr>
-            <td>{{$record->title}}</td>
-            <td>{{$record->price}}</td>
-            <td>{{$record->publisher}}</td>
-            <td>{{$record->published}}</td>
+            <td>Title</td>
+            <td>Price</td>
+            <td>Publisher</td>
+            <td>Published</td>
         </tr>
-    @endforeach
-    </tbody>
-</table>
-
-</body>
-</html>
+        </thead>
+        <tbody>
+        @foreach($records as $record)
+            <tr>
+                <td>{{$record->title}}</td>
+                <td>{{$record->price}}</td>
+                <td>{{$record->publisher}}</td>
+                <td>{{$record->published}}</td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+@endsection
