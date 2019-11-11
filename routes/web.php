@@ -27,3 +27,11 @@ Route::prefix('hello')->group(function(){
 Route::redirect('book', 'book/list');
 Route::get('book/list', 'BookController@list');
 Route::get('book/view/{id}', 'BookController@view');
+
+Route::prefix('ctl')->group(function(){
+	Route::get('plain', 'CtlController@plain');
+	Route::get('html', 'CtlController@html');
+	Route::get('json', 'CtlController@json');
+	Route::get('downloadcsv', 'CtlController@downloadCsv');
+	Route::get('downloadfile', 'CtlController@downloadFile');
+});
