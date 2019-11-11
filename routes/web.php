@@ -20,3 +20,6 @@ Route::get('hello/view', 'HelloController@view');
 Route::get('hello/list', 'HelloController@list');
 Route::get('hello/directive', 'HelloController@directive');
 Route::get('hello/child', 'HelloController@child');
+
+Route::get('book/list', 'BookController@list');
+Route::get('book/view/{id}', 'BookController@view');
