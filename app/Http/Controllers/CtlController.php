@@ -43,6 +43,20 @@ class CtlController extends Controller
         }, 'download.csv', [ 'Content-Type' => 'text/csv' ]);
     }
 
+    public function request(Request $req)
+    {
+        $data = [
+            'root'      => $req->root(),
+            'url'       => $req->url(),
+            'fullUrl'   => $req->fullUrl(),
+            'path'      => $req->path(),
+            'ip'        => $req->ip(),
+            'userAgent' => $req->userAgent(),
+        ];
+
+        return sprintf("<pre>%s</pre>", print_r($data, true));
+    }
+
     private function _getDummyDataArray()
     {
         return [

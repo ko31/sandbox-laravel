@@ -27,7 +27,7 @@ Route::prefix('hello')->group(function () {
 Route::redirect('book', 'book/list');
 Route::get('book/list', 'BookController@list');
 Route::get('book/view/{id}', 'BookController@view')
-	->name('bookview');
+    ->name('bookview');
 
 Route::prefix('ctl')->group(function () {
     Route::get('plain', 'CtlController@plain');
@@ -37,4 +37,5 @@ Route::prefix('ctl')->group(function () {
     Route::get('toviewbook', 'CtlController@toviewbook');
     Route::get('json', 'CtlController@json');
     Route::get('downloadcsv', 'CtlController@downloadCsv');
+    Route::get('request', 'CtlController@request');
 });
