@@ -44,4 +44,6 @@ Route::prefix('ctl')->group(function () {
 Route::prefix('state')->group(function () {
     Route::get('setcookie', 'StateController@setCookie');
     Route::get('getcookie', 'StateController@getCookie');
+    Route::get('putsession', 'StateController@putSession');
+    Route::get('getsession', 'StateController@getSession');
 });
