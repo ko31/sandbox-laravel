@@ -38,5 +38,10 @@ Route::prefix('ctl')->group(function () {
     Route::get('json', 'CtlController@json');
     Route::get('downloadcsv', 'CtlController@downloadCsv');
     Route::get('request', 'CtlController@request');
-	Route::match(['get','post'], 'form', 'CtlController@form');
+    Route::match(['get','post'], 'form', 'CtlController@form');
+});
+
+Route::prefix('state')->group(function () {
+    Route::get('setcookie', 'StateController@setCookie');
+    Route::get('getcookie', 'StateController@getCookie');
 });
