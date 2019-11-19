@@ -145,3 +145,11 @@ Fixing.
 ```
 $ composer sniffer-fix
 ```
+
+## Migration
+
+Refresh DB.
+
+```
+$ php artisan migrate:refresh --seed
+```
