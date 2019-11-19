@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 // Models
 use App\Book;
 
+// DB
+use DB;
+
 class BookController extends Controller {
 	public function index() {
 		// to do something
@@ -50,6 +53,15 @@ class BookController extends Controller {
 			                 ->offset( 0 )
 			                 ->limit( 10 )
 			                 ->get(),
+		];
+
+		return view( 'book.list', $data );
+	}
+
+	public function query() {
+		$sql  = 'SELECT * FROM books ORDER BY price ASC';
+		$data = [
+			'records' => DB::select( $sql ),
 		];
 
 		return view( 'book.list', $data );
