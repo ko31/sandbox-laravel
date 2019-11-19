@@ -15,6 +15,7 @@
             <td>Price</td>
             <td>Publisher</td>
             <td>Published</td>
+            <td>Reviews</td>
         </tr>
         </thead>
         <tbody>
