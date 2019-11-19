@@ -29,6 +29,7 @@ Route::get('book/list', 'BookController@list');
 Route::get('book/view/{id}', 'BookController@view')
     ->name('bookview');
 Route::get('book/where', 'BookController@where');
+Route::get('book/clause', 'BookController@clause');
 
 Route::prefix('ctl')->group(function () {
     Route::get('plain', 'CtlController@plain');

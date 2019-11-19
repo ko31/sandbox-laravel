@@ -42,4 +42,16 @@ class BookController extends Controller {
 
 		return view( 'book.list', $data );
 	}
+
+	public function clause() {
+		$data = [
+			'records' => Book::select( 'title', 'price', 'publisher', 'published' )
+			                 ->orderBy( 'price', 'ASC' )
+			                 ->offset( 0 )
+			                 ->limit( 10 )
+			                 ->get(),
+		];
+
+		return view( 'book.list', $data );
+	}
 }
